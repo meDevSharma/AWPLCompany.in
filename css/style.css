@@ -1592,6 +1592,45 @@ footer {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
+/* Responsive styles for .btn.primary-btn to prevent text cutoff */
+@media (max-width: 768px) {
+    .btn.primary-btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: visible;
+        width: auto;
+        max-width: none;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn.primary-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        overflow: visible;
+        width: auto;
+        max-width: none;
+        min-width: auto;
+        border-radius: 25px;
+    }
+}
+
+@media (max-width: 360px) {
+    .btn.primary-btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: visible;
+        width: auto;
+        max-width: none;
+        min-width: auto;
+        gap: 8px;
+    }
+}
+
 .btn.secondary-btn {
     background: white;
     color: var(--secondary-color);
