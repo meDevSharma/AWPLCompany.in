@@ -394,15 +394,7 @@ body.menu-open {
     animation: fadeInUp 1s ease-out 0.2s both;
 }
 
-.hero-buttons {
-    margin-top: 40px;
-    animation: fadeInUp 1s ease-out 0.4s both;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+
 
 @keyframes fadeInUp {
     from {
@@ -415,188 +407,198 @@ body.menu-open {
     }
 }
 
-.btn {
+
+
+
+
+/* Modern WhatsApp Button Styles */
+.whatsapp-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    padding: 20px;
+}
+
+.whatsapp-btn-modern {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 12px;
     padding: 16px 32px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     font-size: 1.1rem;
-    text-transform: none;
-    letter-spacing: 0.5px;
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    position: relative;
     overflow: hidden;
+    min-width: 220px;
     border: none;
     cursor: pointer;
-    text-decoration: none;
-    min-width: 200px;
 }
 
-.btn i {
-    margin-right: 10px;
-    font-size: 1.2rem;
+.whatsapp-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon-wrapper i {
+    font-size: 1.3rem;
     transition: transform 0.3s ease;
 }
 
-.primary-btn {
-    background: linear-gradient(135deg, #30c284 0%, #403ba5 100%);
-    color: #ffffff;
-    box-shadow: 0 12px 35px rgba(48, 194, 132, 0.3);
-    border: none;
-    position: relative;
-    overflow: hidden;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 1rem;
+.whatsapp-text {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform 0.3s ease;
 }
 
-.primary-btn::before {
-    content: '';
+.whatsapp-ripple {
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-    z-index: 1;
 }
 
-.primary-btn:hover::before {
-    left: 0;
+.whatsapp-btn-modern:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 16px 48px rgba(37, 211, 102, 0.4);
+    background: linear-gradient(135deg, #22C55E 0%, #16A085 100%);
 }
 
-.primary-btn:hover {
-    background: linear-gradient(135deg, #28a574 0%, #362f8a 100%);
-    transform: translateY(-6px) scale(1.05);
-    box-shadow: 0 20px 45px rgba(48, 194, 132, 0.4);
-    color: #ffffff;
+.whatsapp-btn-modern:hover .whatsapp-ripple {
+    left: 100%;
 }
 
-.primary-btn:hover i {
-    transform: scale(1.2) rotate(10deg);
-    color: #ffffff;
+.whatsapp-btn-modern:hover .whatsapp-icon-wrapper {
+    transform: scale(1.1) rotate(10deg);
+    background: rgba(255, 255, 255, 0.3);
 }
 
-.primary-btn:active {
-    transform: translateY(-3px) scale(1.02);
+.whatsapp-btn-modern:hover .whatsapp-text {
+    transform: translateX(2px);
+}
+
+.whatsapp-btn-modern:active {
+    transform: translateY(-2px) scale(1.02);
     transition: all 0.15s ease;
-    box-shadow: 0 15px 30px rgba(48, 194, 132, 0.35);
 }
 
-/* Responsive design for primary button */
+/* Responsive Design for WhatsApp Button */
 @media (max-width: 768px) {
-    .primary-btn {
-        padding: 14px 24px;
-        font-size: 0.9rem;
-        min-width: 280px;
-        border-radius: 25px;
+    .whatsapp-button-container {
+        padding: 15px;
+        margin: 25px 0;
     }
     
-    .primary-btn i {
-        margin-right: 8px;
-        font-size: 1.1rem;
+    .whatsapp-btn-modern {
+        padding: 14px 28px;
+        font-size: 1rem;
+        min-width: 200px;
+        gap: 10px;
     }
     
-    .primary-btn:hover {
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 15px 30px rgba(48, 194, 132, 0.35);
+    .whatsapp-icon-wrapper {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .whatsapp-icon-wrapper i {
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-buttons {
-        margin-top: 30px;
-        padding: 0 20px;
+    .whatsapp-button-container {
+        padding: 10px;
+        margin: 20px 0;
     }
     
-    .primary-btn {
-        padding: 16px 24px;
-        font-size: 0.85rem;
-        width: 100%;
-        max-width: 320px;
-        border-radius: 20px;
-        letter-spacing: 0.3px;
-        white-space: normal;
-        word-wrap: break-word;
-        text-align: center;
-        line-height: 1.4;
-        min-height: 56px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .primary-btn i {
-        margin-right: 8px;
-        font-size: 0.85rem;
-        flex-shrink: 0;
-    }
-    
-    .primary-btn:hover {
-        transform: translateY(-2px) scale(1.01);
-        box-shadow: 0 12px 25px rgba(48, 194, 132, 0.3);
-    }
-}
-
-/* Extra small screens - for very small devices */
-@media (max-width: 360px) {
-    .primary-btn {
-        padding: 14px 20px;
-        font-size: 0.75rem;
-        width: 100%;
-        max-width: 280px;
-        letter-spacing: 0.2px;
-        line-height: 1.3;
-        white-space: normal;
-        word-wrap: break-word;
-        text-align: center;
-        min-height: 52px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .primary-btn i {
-        margin-right: 6px;
-        font-size: 0.75rem;
-        flex-shrink: 0;
-    }
-}
-
-/* Ultra small screens - for devices smaller than 320px */
-@media (max-width: 320px) {
-    .primary-btn {
-        padding: 12px 16px;
-        font-size: 0.7rem;
-        width: 100%;
-        max-width: 260px;
-        letter-spacing: 0.1px;
-        line-height: 1.3;
-        border-radius: 15px;
-        white-space: normal;
-        word-wrap: break-word;
-        text-align: center;
-        min-height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .primary-btn i {
-        margin-right: 5px;
-        font-size: 0.7rem;
-        flex-shrink: 0;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
+    .whatsapp-btn-modern {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+        min-width: 180px;
         gap: 8px;
+        border-radius: 40px;
     }
+    
+    .whatsapp-icon-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .whatsapp-icon-wrapper i {
+        font-size: 1.1rem;
+    }
+    
+    .whatsapp-btn-modern:hover {
+        transform: translateY(-2px) scale(1.02);
+    }
+}
+
+@media (max-width: 360px) {
+    .whatsapp-btn-modern {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        min-width: 160px;
+        gap: 6px;
+        border-radius: 35px;
+    }
+    
+    .whatsapp-icon-wrapper {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .whatsapp-icon-wrapper i {
+        font-size: 1rem;
+    }
+}
+
+/* Animation for button entrance */
+@keyframes whatsappFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.whatsapp-btn-modern {
+    animation: whatsappFadeIn 0.6s ease-out 0.3s both;
+}
+
+/* Pulse animation for attention */
+@keyframes whatsappPulse {
+    0% {
+        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5), 0 0 0 10px rgba(37, 211, 102, 0.1);
+    }
+    100% {
+        box-shadow: 0 8px 32px rgba(37, 211, 102, 0.3);
+    }
+}
+
+.whatsapp-btn-modern:not(:hover) {
+    animation: whatsappFadeIn 0.6s ease-out 0.3s both, whatsappPulse 3s ease-in-out 2s infinite;
 }
 
 /* Featured Posts Section */
@@ -1573,90 +1575,7 @@ footer {
     flex-wrap: wrap;
 }
 
-.btn.primary-btn {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: var(--transition-standard);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
 
-.btn.primary-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive styles for .btn.primary-btn to ensure proper scaling and spacing */
-@media (max-width: 768px) {
-    .btn.primary-btn {
-        padding: 12px 24px;
-        font-size: 0.9rem;
-        white-space: nowrap;
-        overflow: visible;
-        width: auto;
-        max-width: calc(100vw - 40px);
-        min-width: auto;
-        margin: 0 20px;
-        box-sizing: border-box;
-    }
-}
-
-@media (max-width: 480px) {
-    .btn.primary-btn {
-        padding: 10px 20px;
-        font-size: 0.85rem;
-        white-space: nowrap;
-        overflow: visible;
-        width: auto;
-        max-width: calc(100vw - 32px);
-        min-width: auto;
-        border-radius: 25px;
-        margin: 0 16px;
-        box-sizing: border-box;
-    }
-}
-
-@media (max-width: 360px) {
-    .btn.primary-btn {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-        white-space: nowrap;
-        overflow: visible;
-        width: auto;
-        max-width: calc(100vw - 24px);
-        min-width: auto;
-        gap: 6px;
-        margin: 0 12px;
-        box-sizing: border-box;
-        border-radius: 20px;
-    }
-}
-
-@media (max-width: 320px) {
-    .btn.primary-btn {
-        padding: 6px 12px;
-        font-size: 0.75rem;
-        white-space: nowrap;
-        overflow: visible;
-        width: auto;
-        max-width: calc(100vw - 20px);
-        min-width: auto;
-        gap: 5px;
-        margin: 0 10px;
-        box-sizing: border-box;
-        border-radius: 18px;
-    }
-    
-    .btn.primary-btn i {
-        font-size: 0.7rem;
-    }
-}
 
 .btn.secondary-btn {
     background: white;
@@ -2001,16 +1920,7 @@ footer {
     transition: var(--transition-standard);
 }
 
-.form-group .btn.primary-btn {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
 
-.form-group .btn.primary-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
 
 /* FAQ Section */
 .faq-section {
@@ -2216,10 +2126,7 @@ footer {
         font-size: 0.9rem;
     }
     
-    .btn {
-        font-size: 0.9rem;
-        padding: 12px 20px;
-    }
+
 }
 
 /* Sitemap Styles */
@@ -2337,37 +2244,7 @@ img.loaded {
     to { opacity: 1; }
 }
 
-/* Modern styling for buttons and form elements */
-button, 
-.btn, 
-input[type="submit"] {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
 
-button:after, 
-.btn:after, 
-input[type="submit"]:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    z-index: -1;
-}
-
-button:hover:after, 
-.btn:hover:after, 
-input[type="submit"]:hover:after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
 
 /* Responsive styles for sitemap */
 @media (max-width: 768px) {
@@ -2416,16 +2293,7 @@ input[type="submit"]:hover:after {
         max-width: 90%;
     }
     
-    .btn {
-        padding: 14px 28px;
-        font-size: 1rem;
-        min-width: 180px;
-    }
-    
-    .btn i {
-        font-size: 1.1rem;
-        margin-right: 8px;
-    }
+
 }
 
 @media (max-width: 576px) {
@@ -2446,17 +2314,7 @@ input[type="submit"]:hover:after {
         max-width: 95%;
     }
     
-    .btn {
-        padding: 12px 24px;
-        font-size: 0.95rem;
-        min-width: 160px;
-        border-radius: 40px;
-    }
-    
-    .btn i {
-        font-size: 1rem;
-        margin-right: 6px;
-    }
+
 }
 
 @media (max-width: 480px) {
@@ -2468,11 +2326,7 @@ input[type="submit"]:hover:after {
         font-size: 0.9rem;
     }
     
-    .btn {
-        width: 100%;
-        max-width: 280px;
-        margin: 0 auto;
-    }
+
     
     .hero p {
         font-size: 15px;
@@ -2505,11 +2359,7 @@ input[type="submit"]:hover:after {
         transition: none;
     }
     
-    button:after, 
-    .btn:after, 
-    input[type="submit"]:after {
-        transition: none;
-    }
+
 }
 
 /* Blog Post Styling */
