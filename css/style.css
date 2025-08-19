@@ -397,6 +397,11 @@ body.menu-open {
 .hero-buttons {
     margin-top: 40px;
     animation: fadeInUp 1s ease-out 0.4s both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 @keyframes fadeInUp {
@@ -436,10 +441,16 @@ body.menu-open {
 }
 
 .primary-btn {
-    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-    color: var(--secondary-color);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #30c284 0%, #403ba5 100%);
+    color: #ffffff;
+    box-shadow: 0 12px 35px rgba(48, 194, 132, 0.3);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
 }
 
 .primary-btn::before {
@@ -449,8 +460,8 @@ body.menu-open {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(48, 194, 132, 0.1) 0%, rgba(64, 59, 165, 0.1) 100%);
-    transition: left 0.5s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+    transition: left 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
     z-index: 1;
 }
 
@@ -459,19 +470,66 @@ body.menu-open {
 }
 
 .primary-btn:hover {
-    background: linear-gradient(135deg, #ffffff 0%, #f0f2f5 100%);
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    color: var(--primary-color);
+    background: linear-gradient(135deg, #28a574 0%, #362f8a 100%);
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 20px 45px rgba(48, 194, 132, 0.4);
+    color: #ffffff;
 }
 
 .primary-btn:hover i {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.2) rotate(10deg);
+    color: #ffffff;
 }
 
 .primary-btn:active {
-    transform: translateY(-2px) scale(1.01);
-    transition: all 0.1s ease;
+    transform: translateY(-3px) scale(1.02);
+    transition: all 0.15s ease;
+    box-shadow: 0 15px 30px rgba(48, 194, 132, 0.35);
+}
+
+/* Responsive design for primary button */
+@media (max-width: 768px) {
+    .primary-btn {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+        min-width: 280px;
+        border-radius: 25px;
+    }
+    
+    .primary-btn i {
+        margin-right: 8px;
+        font-size: 1.1rem;
+    }
+    
+    .primary-btn:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 15px 30px rgba(48, 194, 132, 0.35);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-buttons {
+        margin-top: 30px;
+        padding: 0 20px;
+    }
+    
+    .primary-btn {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+        min-width: 260px;
+        border-radius: 20px;
+        letter-spacing: 0.5px;
+    }
+    
+    .primary-btn i {
+        margin-right: 6px;
+        font-size: 1rem;
+    }
+    
+    .primary-btn:hover {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 12px 25px rgba(48, 194, 132, 0.3);
+    }
 }
 
 /* Featured Posts Section */
